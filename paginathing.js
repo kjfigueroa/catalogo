@@ -60,7 +60,7 @@
 
     paginationNumbersText: function() {
       var _self = this;
-      return 'Page ' + _self.currentPage + '/' + _self.totalPages;
+      return ' ' + _self.currentPage + '/' + _self.totalPages;
     },
 
     buildPagination: function() {
