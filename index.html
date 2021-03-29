@@ -60,6 +60,52 @@
   
    </style>
    <body class="w3-white w3-content w3-center" style="max-width:1600px">
+      <script language="JavaScript">
+			//Blocking the key functions for developers
+            window.onload = function(){
+			document.addEventListener("contextmenu", function(e){e.preventDefault();}, false);
+			document.addEventListener("keydown", function(e){
+            // "I" key
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 73) {
+				disabledEvent(e);
+                }
+            // "J" key
+            if (e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+				disabledEvent(e);
+				}
+            // "S" key + macOS
+            if (e.keyCode == 83 && (navigator.platform.match("Mac") ? e.metaKey : e.ctrlKey)) {
+				disabledEvent(e);
+                }
+            // "U" key
+            if (e.ctrlKey && e.keyCode == 85) {
+                disabledEvent(e);
+                }
+			// "K" key
+            if (e.ctrlKey && e.shiftkey && e.keyCode == 85) {
+				disabledEvent(e);
+				}
+            // "k" Key
+            if (e.ctrlkey && e.keyCode == 75) {
+				disabledEvent(e);
+				}
+            // "F12" key
+            if (event.keyCode == 123) {
+				disabledEvent(e);
+				}
+               }, false);
+			function disabledEvent(e){
+				if (e.stopPropagation){
+					e.stopPropagation();
+					}
+				else if (window.event){
+					window.event.cancelBubble = true;
+				}
+					e.preventDefault();
+			return false;
+    		}
+			};
+</script>
       <!-- Sidebar/menu -->
       <nav class="w3-sidebar w3-bar-block w3-pale-red w3-animate-left w3-text-black w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar">
          <br>
